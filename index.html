@@ -131,10 +131,12 @@
     margin-bottom: 36px;
     border-bottom: 1.5px solid var(--rule);
     animation: fadeIn 0.7s 0.1s ease both;
+    flex-wrap: wrap;
   }
 
   .tab-btn {
     flex: 1;
+    min-width: 80px;
     padding: 13px 6px;
     border: none;
     background: transparent;
@@ -392,322 +394,27 @@
     letter-spacing: 0.2px;
   }
 
-  /* ===== QUIZ HEADER ===== */
-  .quiz-bar {
-    background: var(--surface);
-    border-top: 3px solid var(--ink);
-    border-radius: 3px;
-    padding: 22px 32px;
-    margin-bottom: 22px;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .quiz-progress-group { flex: 1; }
-
-  .progress-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.64rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-bottom: 9px;
-  }
-
-  .progress-count {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    color: var(--ink-mid);
-    margin-top: 8px;
-  }
-
-  .progress-track {
-    height: 3px;
-    background: var(--rule-light);
-    border-radius: 99px;
-    max-width: 280px;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--red);
-    border-radius: 99px;
-    transition: width 0.5s ease;
-  }
-
-  .score-panel { text-align: right; }
-
-  .score-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
-    font-weight: 900;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .score-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-top: 3px;
-  }
-
-  /* ===== QUESTION CARD ===== */
-  .question-card {
-    background: var(--surface);
-    border-radius: 3px;
-    padding: 40px;
-    box-shadow: var(--shadow);
-    border-top: 3px solid var(--ink);
-    animation: fadeIn 0.4s ease both;
-  }
-
-  .q-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-  }
-
-  .q-category {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.64rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--red);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .q-category::before {
-    content: '';
+  /* ===== NAV LINK ===== */
+  .nav-link {
     display: inline-block;
-    width: 14px;
-    height: 1.5px;
-    background: var(--red);
-  }
-
-  .q-num {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    color: var(--ink-light);
-    letter-spacing: 1px;
-  }
-
-  .question-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.38rem;
-    color: var(--ink);
-    margin-bottom: 30px;
-    line-height: 1.45;
-    font-style: italic;
-  }
-
-  /* Options — exam paper style */
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .option-btn {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 13px 18px;
-    border: 1.5px solid var(--rule);
-    border-radius: 2px;
-    background: var(--surface);
-    color: var(--ink-mid);
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.05rem;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.17s ease;
-    line-height: 1.45;
-    width: 100%;
-  }
-
-  .option-letter {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--ink-light);
-    flex-shrink: 0;
-    width: 16px;
-    margin-top: 3px;
-  }
-
-  .option-btn:hover:not(:disabled) {
-    border-color: var(--ink);
-    background: var(--bg);
-    color: var(--ink);
-  }
-
-  .option-btn:hover:not(:disabled) .option-letter { color: var(--ink); }
-
-  .option-btn.correct {
-    border-color: var(--correct);
-    background: var(--correct-pale);
-    color: var(--correct);
-    font-weight: 600;
-  }
-
-  .option-btn.correct .option-letter { color: var(--correct); }
-
-  .option-btn.wrong {
-    border-color: var(--red);
-    background: var(--red-pale);
-    color: var(--red);
-    text-decoration: line-through;
-  }
-
-  .option-btn.wrong .option-letter { color: var(--red); }
-  .option-btn:disabled { cursor: default; }
-
-  /* ===== FEEDBACK ===== */
-  .feedback {
-    display: none;
-    padding: 16px 20px;
-    border-radius: 2px;
-    margin-bottom: 22px;
-    font-family: 'Crimson Pro', serif;
-    font-size: 1rem;
-    line-height: 1.65;
-    animation: fadeIn 0.3s ease both;
-  }
-
-  .feedback.show { display: block; }
-
-  .feedback.correct-fb {
-    background: var(--correct-pale);
-    border-left: 3px solid var(--correct);
-    color: var(--correct);
-  }
-
-  .feedback.wrong-fb {
-    background: var(--red-pale);
-    border-left: 3px solid var(--red);
-    color: #A02008;
-  }
-
-  .feedback strong {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  /* ===== NEXT BUTTON ===== */
-  .next-btn {
-    display: none;
-    width: 100%;
-    padding: 14px 24px;
+    padding: 12px 24px;
     background: var(--ink);
     color: var(--bg);
     border: 2px solid var(--ink);
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .next-btn.show { display: block; }
-
-  .next-btn:hover {
-    background: var(--red);
-    border-color: var(--red);
-    color: #fff;
-  }
-
-  /* ===== RESULTS ===== */
-  .results { display: none; animation: fadeIn 0.6s ease both; }
-  .results.show { display: block; }
-
-  .results-card {
-    background: var(--surface);
-    border-top: 3px solid var(--ink);
     border-radius: 3px;
-    padding: 56px 40px;
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-  }
-
-  .trophy { font-size: 3.5rem; display: block; margin-bottom: 16px; }
-
-  .results-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--ink);
-    font-style: italic;
-    margin-bottom: 8px;
-  }
-
-  .results-rule {
-    width: 60px;
-    height: 2px;
-    background: var(--red);
-    margin: 18px auto;
-  }
-
-  .final-score {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    font-weight: 900;
-    color: var(--red);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .final-score span {
-    font-size: 2rem;
-    color: var(--ink-light);
-  }
-
-  .score-message {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.08rem;
-    color: var(--ink-mid);
-    margin: 0 auto 36px;
-    line-height: 1.75;
-    max-width: 380px;
-    font-style: italic;
-  }
-
-  .restart-btn {
-    padding: 14px 48px;
-    background: transparent;
-    color: var(--ink);
-    border: 2px solid var(--ink);
-    border-radius: 2px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    cursor: pointer;
+    text-decoration: none;
     transition: all 0.2s ease;
   }
 
-  .restart-btn:hover { background: var(--ink); color: var(--bg); }
+  .nav-link:hover { 
+    background: var(--red); 
+    border-color: var(--red); 
+  }
 
   /* ===== ANIMATIONS ===== */
   @keyframes fadeIn {
@@ -717,13 +424,10 @@
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 580px) {
-    .grammar-card, .vocab-section-card, .question-card, .results-card {
+    .grammar-card, .vocab-section-card {
       padding: 24px 20px;
     }
-    .quiz-bar { padding: 18px 20px; }
     .card-num { font-size: 2.2rem; }
-    .question-text { font-size: 1.2rem; }
-    .final-score { font-size: 3.8rem; }
     .masthead-title { font-size: 2.2rem; }
     .tab-btn { font-size: 0.6rem; padding: 11px 4px; letter-spacing: 1.5px; }
     .card-header { gap: 12px; }
@@ -751,7 +455,7 @@
   <nav class="nav">
     <button class="tab-btn active" onclick="showTab('grammar', this)">📖 Grammatik</button>
     <button class="tab-btn" onclick="showTab('vocab', this)">📝 Wortschatz</button>
-    <button class="tab-btn" onclick="showTab('quiz', this)">🎯 Quiz</button>
+    <a href="hub.html" class="tab-btn" style="border: none; text-decoration: none; padding: 13px 6px;">🏠 Hub</a>
   </nav>
 
   <!-- ===== GRAMMAR SECTION ===== -->
@@ -765,7 +469,7 @@
           <h2>📊 Steigerung von Adjektiven</h2>
         </div>
       </div>
-      <p>In German, adjectives have three forms: <strong>base (Positiv)</strong>, <strong>comparative (Komparativ)</strong>, and <strong>superlative (Superlativ)</strong>. This is similar to English: fast → faster → fastest.</p>
+      <p>In German, adjectives have three forms: <strong>base (Positiv)</strong>, <strong>comparative (Komparativ)</strong>, and <strong>superlative (Superlativ)</strong>. This is similar to English.</p>
       <div class="rule-box">
         <p>💡 Rule: Add <strong>-er</strong> for comparative, <strong>am -sten</strong> for superlative. Many one-syllable adjectives get an umlaut (a→ä, o→ö, u→ü).</p>
       </div>
@@ -782,14 +486,9 @@
           </tbody>
         </table>
       </div>
-      <p style="margin-top:14px">When the adjective comes <strong>before a noun</strong>, it needs an ending:</p>
       <div class="example-box">
         <p>ein <strong>größer<u>es</u></strong> Haus · eine <strong>günstig<u>ere</u></strong> Wohnung · einen <strong>besser<u>en</u></strong> Job</p>
         <p class="translation">a bigger house · a cheaper apartment · a better job</p>
-      </div>
-      <div class="example-box">
-        <p>Ich wohne in einem <strong>größeren</strong> Haus als du.</p>
-        <p class="translation">I live in a bigger house than you.</p>
       </div>
     </div>
 
@@ -824,124 +523,6 @@
       </div>
     </div>
 
-    <div class="grammar-card">
-      <div class="card-header">
-        <div class="card-num">03</div>
-        <div class="card-title-group">
-          <div class="card-label">Grammatik 3</div>
-          <h2>❓ Indirekte Fragesätze</h2>
-        </div>
-      </div>
-      <p>Indirect questions are questions embedded inside another sentence. The key difference: <strong>the verb goes to the END</strong> of the clause.</p>
-      <div class="rule-box">
-        <p>💡 Direct question: <strong>Wie heißt er?</strong> → Indirect: Er hat gefragt, <strong>wie er heißt.</strong> (verb at end!)</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Type</th><th>Connector</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>W-question</td><td><strong>wie, woher, was, warum, wann…</strong></td><td>Er fragt, <strong>wie</strong> er heißt.</td></tr>
-            <tr><td>Yes/No question</td><td><strong>ob</strong></td><td>Er fragt, <strong>ob</strong> sie Zeit hat.</td></tr>
-            <tr><td>Statement</td><td><strong>dass</strong></td><td>Sie antwortet, <strong>dass</strong> sie keine Zeit hat.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="example-box">
-        <p>Er hat ihn gefragt, <strong>warum</strong> er zu spät gekommen <strong>ist</strong>.</p>
-        <p class="translation">He asked him why he was late.</p>
-      </div>
-      <div class="example-box">
-        <p>Sie fragt, <strong>ob</strong> er den Wagen gekauft <strong>hat</strong>.</p>
-        <p class="translation">She asks whether he bought the car.</p>
-      </div>
-    </div>
-
-    <div class="grammar-card">
-      <div class="card-header">
-        <div class="card-num">04</div>
-        <div class="card-title-group">
-          <div class="card-label">Grammatik 4</div>
-          <h2>🔄 Kausale Satzverbindungen</h2>
-        </div>
-      </div>
-      <p>There are 4 ways to say "because / therefore" in German. They all carry the same meaning but have different positions in the sentence.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Word</th><th>Type</th><th>Verb position</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td><strong>weil</strong></td><td>because</td><td>Verb → END</td><td>Ich gehe nicht, <strong>weil</strong> ich krank <strong>bin</strong>.</td></tr>
-            <tr><td><strong>da</strong></td><td>since/because</td><td>Verb → END, starts sentence</td><td><strong>Da</strong> ich krank <strong>bin</strong>, gehe ich nicht.</td></tr>
-            <tr><td><strong>denn</strong></td><td>because/for</td><td>Normal word order</td><td>Ich gehe nicht, <strong>denn</strong> ich <strong>bin</strong> krank.</td></tr>
-            <tr><td><strong>deshalb / deswegen</strong></td><td>therefore</td><td>Verb after deshalb</td><td>Ich bin krank, <strong>deshalb gehe</strong> ich nicht.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="rule-box">
-        <p>💡 Tip: <strong>weil &amp; da</strong> = verb goes to END. <strong>denn &amp; deshalb</strong> = normal word order.</p>
-      </div>
-    </div>
-
-    <div class="grammar-card">
-      <div class="card-header">
-        <div class="card-num">05</div>
-        <div class="card-title-group">
-          <div class="card-label">Grammatik 5</div>
-          <h2>📐 Präpositionen mit Genitiv</h2>
-        </div>
-      </div>
-      <p>These prepositions always use the <strong>Genitiv</strong> case. Remember: Genitiv adds <strong>-s/-es</strong> to der/das nouns and changes die/plural to <strong>der</strong>.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Preposition</th><th>Meaning</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td><strong>wegen</strong></td><td>because of</td><td>Wegen <strong>des</strong> Regen<strong>s</strong> bleibe ich zu Hause.</td></tr>
-            <tr><td><strong>trotz</strong></td><td>despite</td><td>Trotz <strong>der</strong> Kälte gehen wir spazieren.</td></tr>
-            <tr><td><strong>während</strong></td><td>during</td><td>Während <strong>des</strong> Film<strong>s</strong> esse ich Popcorn.</td></tr>
-            <tr><td><strong>statt / anstelle</strong></td><td>instead of</td><td>Statt <strong>des</strong> Auto<strong>s</strong> nehme ich das Fahrrad.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="rule-box">
-        <p>💡 Genitiv endings: der → <strong>des + -s</strong> · die → <strong>der</strong> · das → <strong>des + -s</strong> · plural → <strong>der</strong></p>
-      </div>
-      <div class="example-box">
-        <p><strong>Wegen des schlechten Wetters</strong> fällt der Ausflug aus.</p>
-        <p class="translation">Because of the bad weather, the trip is cancelled.</p>
-      </div>
-      <div class="example-box">
-        <p><strong>Trotz der großen Kälte</strong> ist der See nicht gefroren.</p>
-        <p class="translation">Despite the great cold, the lake is not frozen.</p>
-      </div>
-    </div>
-
-    <div class="grammar-card">
-      <div class="card-header">
-        <div class="card-num">06</div>
-        <div class="card-title-group">
-          <div class="card-label">Grammatik 6</div>
-          <h2>🔢 Indefinitpronomen</h2>
-        </div>
-      </div>
-      <p>Indefinite pronouns refer to unspecified people, things, amounts, or places. Here are the most important ones:</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Pronoun</th><th>Meaning</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td><strong>viele</strong></td><td>many</td><td>Viele lieben moderne Kunst.</td></tr>
-            <tr><td><strong>einige</strong></td><td>some</td><td>Einige interessieren sich für Musik.</td></tr>
-            <tr><td><strong>manche</strong></td><td>some / certain</td><td>Manche Bilder sind sehr modern.</td></tr>
-            <tr><td><strong>mehrere</strong></td><td>several</td><td>Mehrere Personen haben angerufen.</td></tr>
-            <tr><td><strong>andere</strong></td><td>others</td><td>Andere bevorzugen Literatur.</td></tr>
-            <tr><td><strong>irgendwer</strong></td><td>someone</td><td>Irgendwer hat angerufen.</td></tr>
-            <tr><td><strong>irgendwo</strong></td><td>somewhere</td><td>Irgendwo gibt es ein Café.</td></tr>
-            <tr><td><strong>irgendwann</strong></td><td>sometime</td><td>Irgendwann werde ich das lernen.</td></tr>
-            <tr><td><strong>irgendetwas</strong></td><td>something</td><td>Ich höre irgendetwas.</td></tr>
-            <tr><td><strong>nirgendwo</strong></td><td>nowhere</td><td>Das habe ich nirgendwo gesehen.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
   </div><!-- /grammar -->
 
   <!-- ===== VOCAB SECTION ===== -->
@@ -962,290 +543,26 @@
         <div class="vocab-entry"><div class="vocab-de">die Konkurrenz</div><div class="vocab-en">competition</div></div>
         <div class="vocab-entry"><div class="vocab-de">das Schnäppchen</div><div class="vocab-en">bargain / good deal</div></div>
         <div class="vocab-entry"><div class="vocab-de">die Werbung</div><div class="vocab-en">advertising</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Wurfsendung</div><div class="vocab-en">flyer / leaflet</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Rekord</div><div class="vocab-en">record</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Höchstleistung</div><div class="vocab-en">peak performance</div></div>
-        <div class="vocab-entry"><div class="vocab-de">das Produkt</div><div class="vocab-en">product</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Konsument</div><div class="vocab-en">consumer</div></div>
       </div>
     </div>
 
-    <div class="vocab-section-card">
-      <div class="vocab-header">
-        <div class="card-num">02</div>
-        <div class="card-title-group">
-          <div class="card-label">Wortschatz 2</div>
-          <h2>💼 Bewerbung &amp; Beruf</h2>
-        </div>
-      </div>
-      <p>Essential vocabulary for job applications.</p>
-      <div class="vocab-grid">
-        <div class="vocab-entry"><div class="vocab-de">die Bewerbung</div><div class="vocab-en">job application</div></div>
-        <div class="vocab-entry"><div class="vocab-de">sich bewerben</div><div class="vocab-en">to apply for</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Stelle</div><div class="vocab-en">job position</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Lebenslauf</div><div class="vocab-en">CV / resume</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Erfahrung</div><div class="vocab-en">experience</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Kenntnisse</div><div class="vocab-en">knowledge / skills</div></div>
-        <div class="vocab-entry"><div class="vocab-de">das Vorstellungsgespräch</div><div class="vocab-en">job interview</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Ausbildung</div><div class="vocab-en">training / education</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Stärke</div><div class="vocab-en">strength</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Werdegang</div><div class="vocab-en">career path</div></div>
-      </div>
-    </div>
-
-    <div class="vocab-section-card">
-      <div class="vocab-header">
-        <div class="card-num">03</div>
-        <div class="card-title-group">
-          <div class="card-label">Wortschatz 3</div>
-          <h2>❤️ Lebensstationen</h2>
-        </div>
-      </div>
-      <p>Life events vocabulary — for talking about relationships and milestones.</p>
-      <div class="vocab-grid">
-        <div class="vocab-entry"><div class="vocab-de">die Beziehung</div><div class="vocab-en">relationship</div></div>
-        <div class="vocab-entry"><div class="vocab-de">sich verlieben in</div><div class="vocab-en">to fall in love with</div></div>
-        <div class="vocab-entry"><div class="vocab-de">sich trennen von</div><div class="vocab-en">to separate from</div></div>
-        <div class="vocab-entry"><div class="vocab-de">heiraten</div><div class="vocab-en">to get married</div></div>
-        <div class="vocab-entry"><div class="vocab-de">ein Kind erwarten</div><div class="vocab-en">to expect a child</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die goldene Hochzeit</div><div class="vocab-en">golden wedding (50 yrs)</div></div>
-        <div class="vocab-entry"><div class="vocab-de">sich streiten über</div><div class="vocab-en">to argue about</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Gatte / die Gattin</div><div class="vocab-en">husband / wife (formal)</div></div>
-      </div>
-    </div>
-
-    <div class="vocab-section-card">
-      <div class="vocab-header">
-        <div class="card-num">04</div>
-        <div class="card-title-group">
-          <div class="card-label">Wortschatz 4</div>
-          <h2>🌦️ Wetter &amp; Umwelt</h2>
-        </div>
-      </div>
-      <p>Climate and environment — a very common B1 test topic!</p>
-      <div class="vocab-grid">
-        <div class="vocab-entry"><div class="vocab-de">der Klimawandel</div><div class="vocab-en">climate change</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Überschwemmung</div><div class="vocab-en">flood</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Umweltschutz</div><div class="vocab-en">environmental protection</div></div>
-        <div class="vocab-entry"><div class="vocab-de">umweltfreundlich</div><div class="vocab-en">eco-friendly</div></div>
-        <div class="vocab-entry"><div class="vocab-de">schmelzen</div><div class="vocab-en">to melt</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Hagel</div><div class="vocab-en">hail</div></div>
-        <div class="vocab-entry"><div class="vocab-de">bewölkt</div><div class="vocab-en">cloudy</div></div>
-        <div class="vocab-entry"><div class="vocab-de">frostig</div><div class="vocab-en">frosty</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Dürre</div><div class="vocab-en">drought</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Hitze</div><div class="vocab-en">heat / heatwave</div></div>
-      </div>
-    </div>
-
-    <div class="vocab-section-card">
-      <div class="vocab-header">
-        <div class="card-num">05</div>
-        <div class="card-title-group">
-          <div class="card-label">Wortschatz 5</div>
-          <h2>🎨 Kunst &amp; Handwerk</h2>
-        </div>
-      </div>
-      <p>Art vocabulary — for describing shapes, materials and artworks.</p>
-      <div class="vocab-grid">
-        <div class="vocab-entry"><div class="vocab-de">das Kunstwerk</div><div class="vocab-en">artwork</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Künstler</div><div class="vocab-en">artist</div></div>
-        <div class="vocab-entry"><div class="vocab-de">die Zeichnung</div><div class="vocab-en">drawing</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Hintergrund</div><div class="vocab-en">background</div></div>
-        <div class="vocab-entry"><div class="vocab-de">der Vordergrund</div><div class="vocab-en">foreground</div></div>
-        <div class="vocab-entry"><div class="vocab-de">eckig</div><div class="vocab-en">angular / square</div></div>
-        <div class="vocab-entry"><div class="vocab-de">gestreift</div><div class="vocab-en">striped</div></div>
-        <div class="vocab-entry"><div class="vocab-de">gepunktet</div><div class="vocab-en">dotted</div></div>
-        <div class="vocab-entry"><div class="vocab-de">das Material</div><div class="vocab-en">material</div></div>
-        <div class="vocab-entry"><div class="vocab-de">verwenden</div><div class="vocab-en">to use / utilize</div></div>
-      </div>
+    <div style="text-align: center; padding: 24px; background: var(--surface); border-radius: 3px; box-shadow: var(--shadow);">
+      <p style="color: var(--ink-mid); margin-bottom: 12px;">Ready to practice? Head to the next lesson or take the quiz.</p>
+      <a href="lektion-11-15.html" class="nav-link">→ Lektion 11–15</a>
     </div>
 
   </div><!-- /vocab -->
 
-  <!-- ===== QUIZ SECTION ===== -->
-  <div class="section" id="tab-quiz">
-
-    <div class="quiz-bar">
-      <div class="quiz-progress-group">
-        <div class="progress-label">Fortschritt</div>
-        <div class="progress-track">
-          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-        </div>
-        <div class="progress-count">Frage <span id="q-current">1</span> von <span id="q-total">20</span></div>
-      </div>
-      <div class="score-panel">
-        <div class="score-num" id="score-num">0</div>
-        <div class="score-label">Punkte</div>
-      </div>
-    </div>
-
-    <div class="question-card" id="question-card">
-      <div class="q-meta">
-        <div class="q-category" id="q-category">Grammatik</div>
-        <div class="q-num" id="q-num-display">01 / 20</div>
-      </div>
-      <div class="question-text" id="question-text">Loading…</div>
-      <div class="options" id="options"></div>
-      <div class="feedback" id="feedback"></div>
-      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Weiter →</button>
-    </div>
-
-    <div class="results" id="results">
-      <div class="results-card">
-        <span class="trophy" id="trophy">🏆</span>
-        <h2 id="results-title">Quiz abgeschlossen!</h2>
-        <div class="results-rule"></div>
-        <div class="final-score"><span id="final-score">0</span><span> / 20</span></div>
-        <p class="score-message" id="score-message">Sehr gut gemacht!</p>
-        <button class="restart-btn" onclick="restartQuiz()">🔄 Nochmal versuchen</button>
-      </div>
-    </div>
-
-  </div><!-- /quiz -->
-
 </div><!-- /container -->
 
 <script>
-// ===== TAB LOGIC =====
-function showTab(name, btn) {
+function showTab(tabName, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-' + tabName).classList.add('active');
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-  btn.classList.add('active');
-  if (name === 'quiz' && !quizStarted) initQuiz();
-}
-
-// ===== QUIZ DATA =====
-const questions = [
-  { cat: "Komparativ", q: "Peter singt gut. Klaus singt ___. Achim singt am besten.", opts: ["besser", "gutsamer", "mehr gut", "guterer"], ans: 0, exp: "'gut' is irregular: gut → <strong>besser</strong> → am besten. Just like English: good → better → best!" },
-  { cat: "Komparativ", q: "Ich wohne in einem ___ Haus als du. (groß)", opts: ["größeren", "großen", "größerem", "größeres"], ans: 0, exp: "After 'in einem' (Dativ, neuter): comparative adjective → <strong>größeren</strong>. Dativ neuter ending = -en." },
-  { cat: "Superlativ", q: "Welcher Fernseher ist am günstigsten?", opts: ["Er ist am günstigsten.", "Er ist günstiger.", "Er ist am günstig.", "Er ist am günstigste."], ans: 0, exp: "Superlative predicate form: <strong>am + adjective + sten</strong>. So: am <strong>günstigsten</strong>. ✓" },
-  { cat: "Komparativ", q: "Sarah liest viele Bücher. Susi liest ___ Bücher.", opts: ["mehr", "vieler", "vielerer", "meisten"], ans: 0, exp: "'viel' is irregular: viel → <strong>mehr</strong> → am meisten. Like English: much → more → most." },
-  { cat: "Feste Präpositionen", q: "Ich bewerbe mich ___ die Stelle als Software-Ingenieur.", opts: ["um", "für", "an", "auf"], ans: 0, exp: "<strong>sich bewerben um</strong> = to apply for. Always: bewerben + <strong>um</strong> + Akkusativ." },
-  { cat: "Feste Präpositionen", q: "Sie interessiert sich ___ moderne Technologie.", opts: ["für", "an", "über", "auf"], ans: 0, exp: "<strong>sich interessieren für</strong> = to be interested in. Always: interessieren + <strong>für</strong> + Akkusativ." },
-  { cat: "Feste Präpositionen", q: "Ich gratuliere dir ___ deiner bestandenen Prüfung!", opts: ["zu", "für", "über", "an"], ans: 0, exp: "<strong>gratulieren zu</strong> = to congratulate on. Always: gratulieren + <strong>zu</strong> + Dativ." },
-  { cat: "Feste Präpositionen", q: "Er kümmert sich ___ die Gäste.", opts: ["um", "für", "auf", "mit"], ans: 0, exp: "<strong>sich kümmern um</strong> = to take care of. Always: kümmern + <strong>um</strong> + Akkusativ." },
-  { cat: "Indirekte Fragesätze", q: "Er fragt, ___ sie heute Zeit ___.", opts: ["ob / hat", "dass / hat", "wenn / hat", "ob / haben"], ans: 0, exp: "Yes/No indirect question → use <strong>ob</strong>. Verb goes to END: '...ob sie heute Zeit <strong>hat</strong>.' ✓" },
-  { cat: "Indirekte Fragesätze", q: "Sie fragt, woher er ___.", opts: ["kommt", "kommen", "ist kommen", "komme"], ans: 0, exp: "In indirect questions, verb goes to the END: 'Sie fragt, woher er <strong>kommt</strong>.' ✓" },
-  { cat: "Indirekte Fragesätze", q: "Er hat gefragt, warum du zu spät gekommen ___.", opts: ["bist", "hast", "wärst", "seist"], ans: 0, exp: "'kommen' uses <strong>sein</strong> in Perfekt: zu spät gekommen <strong>bist</strong>. Verb still goes to end in indirect clause. ✓" },
-  { cat: "Kausale Verbindungen", q: "Ich gehe heute nicht ins Büro, ___ ich bin krank.", opts: ["denn", "weil", "da", "deshalb"], ans: 0, exp: "<strong>denn</strong> keeps normal word order: ...denn ich <strong>bin</strong> krank. If you used 'weil', the verb would go to end: ...weil ich krank <strong>bin</strong>." },
-  { cat: "Kausale Verbindungen", q: "Ich bin krank, ___ gehe ich nicht ins Büro.", opts: ["deshalb", "weil", "denn", "da"], ans: 0, exp: "<strong>deshalb/deswegen</strong> = therefore. It inverts subject and verb: ...<strong>deshalb gehe</strong> ich... ✓" },
-  { cat: "Kausale Verbindungen", q: "___ ich krank bin, gehe ich nicht ins Büro.", opts: ["Da", "Denn", "Deshalb", "Wegen"], ans: 0, exp: "<strong>da</strong> (like weil) starts a causal clause and sends verb to end: Da ich krank <strong>bin</strong>. It can start the sentence! ✓" },
-  { cat: "Genitiv-Präpositionen", q: "___ des schlechten Wetters fällt der Ausflug aus.", opts: ["Wegen", "Trotz", "Während", "Statt"], ans: 0, exp: "<strong>wegen</strong> = because of. Wegen + Genitiv: 'des schlechten Wetters' (Genitiv of 'das schlechte Wetter'). ✓" },
-  { cat: "Genitiv-Präpositionen", q: "___ der großen Kälte ist der See nicht gefroren.", opts: ["Trotz", "Wegen", "Während", "Anstelle"], ans: 0, exp: "<strong>trotz</strong> = despite/in spite of. Trotz + Genitiv: 'der großen Kälte' (Genitiv of 'die große Kälte'). ✓" },
-  { cat: "Genitiv-Präpositionen", q: "___ des Films haben wir viel Popcorn gegessen.", opts: ["Während", "Trotz", "Wegen", "Statt"], ans: 0, exp: "<strong>während</strong> = during. Während + Genitiv: 'des Films' (Genitiv of 'der Film' = des Film<strong>s</strong>). ✓" },
-  { cat: "Indefinitpronomen", q: "___ lieben moderne Kunst, andere bevorzugen Klassik.", opts: ["Viele", "Irgendwer", "Nirgendwo", "Irgendetwas"], ans: 0, exp: "<strong>Viele</strong> = many (people). Used when talking about a large unspecified group. ✓" },
-  { cat: "Indefinitpronomen", q: "Ich suche ___ zu essen. Ich habe Hunger!", opts: ["irgendetwas", "irgendwann", "irgendwo", "nirgendwo"], ans: 0, exp: "<strong>irgendetwas</strong> = something (a thing). For places use irgendwo, for time irgendwann, for things <strong>irgendetwas</strong>. ✓" },
-  { cat: "Indefinitpronomen", q: "Das Buch habe ich ___ gesehen. Es ist verschwunden!", opts: ["nirgendwo", "irgendwo", "irgendwann", "irgendwer"], ans: 0, exp: "<strong>nirgendwo</strong> = nowhere (negative of irgendwo/somewhere). 'Ich habe es <strong>nirgendwo</strong> gesehen' = I didn't see it anywhere. ✓" },
-];
-
-let currentQ = 0, score = 0, answered = false, quizStarted = false;
-const LETTERS = ['A', 'B', 'C', 'D'];
-
-function initQuiz() {
-  quizStarted = true;
-  currentQ = 0; score = 0; answered = false;
-  document.getElementById('results').classList.remove('show');
-  document.getElementById('question-card').style.display = 'block';
-  document.getElementById('score-num').textContent = '0';
-  document.getElementById('q-total').textContent = questions.length;
-  showQuestion();
-}
-
-function shuffle(arr) {
-  let a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function showQuestion() {
-  answered = false;
-  const q = questions[currentQ];
-  document.getElementById('q-category').textContent = q.cat;
-  document.getElementById('q-current').textContent = currentQ + 1;
-  document.getElementById('q-num-display').textContent =
-    String(currentQ + 1).padStart(2,'0') + ' / ' + String(questions.length).padStart(2,'0');
-  document.getElementById('question-text').textContent = q.q;
-  document.getElementById('feedback').className = 'feedback';
-  document.getElementById('next-btn').className = 'next-btn';
-
-  const pct = (currentQ / questions.length) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
-
-  const optDiv = document.getElementById('options');
-  optDiv.innerHTML = '';
-  const indexed = q.opts.map((o, i) => ({ text: o, correct: i === q.ans }));
-  const shuffled = shuffle(indexed);
-
-  shuffled.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerHTML = `<span class="option-letter">${LETTERS[i]}</span><span>${opt.text}</span>`;
-    btn.onclick = () => selectAnswer(btn, opt.correct, shuffled, q.exp);
-    optDiv.appendChild(btn);
-  });
-}
-
-function selectAnswer(btn, isCorrect, shuffled, explanation) {
-  if (answered) return;
-  answered = true;
-  const allBtns = document.querySelectorAll('.option-btn');
-  allBtns.forEach((b, i) => {
-    b.disabled = true;
-    if (shuffled[i].correct) b.classList.add('correct');
-  });
-  const fb = document.getElementById('feedback');
-  if (isCorrect) {
-    score++;
-    btn.classList.add('correct');
-    document.getElementById('score-num').textContent = score;
-    fb.className = 'feedback correct-fb show';
-    fb.innerHTML = '<strong>✅ Richtig!</strong>' + explanation;
-  } else {
-    btn.classList.add('wrong');
-    fb.className = 'feedback wrong-fb show';
-    fb.innerHTML = '<strong>❌ Leider falsch.</strong>' + explanation;
-  }
-  document.getElementById('next-btn').className = 'next-btn show';
-}
-
-function nextQuestion() {
-  currentQ++;
-  if (currentQ >= questions.length) {
-    showResults();
-  } else {
-    const card = document.getElementById('question-card');
-    card.style.animation = 'none';
-    card.offsetHeight;
-    card.style.animation = 'fadeIn 0.4s ease both';
-    showQuestion();
-  }
-}
-
-function showResults() {
-  document.getElementById('question-card').style.display = 'none';
-  document.getElementById('results').classList.add('show');
-  document.getElementById('progress-fill').style.width = '100%';
-  const pct = (score / questions.length) * 100;
-  document.getElementById('final-score').textContent = score;
-  let trophy, title, msg;
-  if (pct >= 90)      { trophy='🏆'; title='Ausgezeichnet!';   msg='Fantastisch! Du beherrschst die Grammatik sehr gut. Du bist bereit für den B1 Test! 💪'; }
-  else if (pct >= 70) { trophy='🥇'; title='Sehr gut!';         msg='Gut gemacht! Du hast die meisten Grammatikregeln verstanden. Noch ein bisschen üben und du bist perfekt!'; }
-  else if (pct >= 50) { trophy='🥈'; title='Gut gemacht!';      msg='Du hast einen guten Start! Schau dir nochmal die Erklärungen an und versuche es wieder.'; }
-  else                { trophy='📚'; title='Weiter üben!';      msg='Kein Problem! Lese die Grammatik-Erklärungen noch einmal durch und versuche es nochmal. Schritt für Schritt! 🇩🇪'; }
-  document.getElementById('trophy').textContent = trophy;
-  document.getElementById('results-title').textContent = title;
-  document.getElementById('score-message').textContent = msg;
-}
-
-function restartQuiz() {
-  document.getElementById('question-card').style.display = 'block';
-  document.getElementById('results').classList.remove('show');
-  initQuiz();
+  if (btn) btn.classList.add('active');
 }
 </script>
+
 </body>
 </html>
